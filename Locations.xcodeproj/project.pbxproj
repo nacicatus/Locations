@@ -14,6 +14,8 @@
 		F8B42A0A1D81B3E6001B3C67 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B42A091D81B3E6001B3C67 /* Images.xcassets */; };
 		F8B42A0D1D81B3E6001B3C67 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B42A0B1D81B3E6001B3C67 /* LaunchScreen.xib */; };
 		F8B42A191D81B3E6001B3C67 /* LocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B42A181D81B3E6001B3C67 /* LocationsTests.swift */; };
+		F8B42A231D81B647001B3C67 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B42A221D81B647001B3C67 /* LocationModel.swift */; };
+		F8B42A251D81B650001B3C67 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B42A241D81B650001B3C67 /* HomeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		F8B42A121D81B3E6001B3C67 /* LocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B42A171D81B3E6001B3C67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B42A181D81B3E6001B3C67 /* LocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTests.swift; sourceTree = "<group>"; };
+		F8B42A221D81B647001B3C67 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		F8B42A241D81B650001B3C67 /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +83,11 @@
 		F8B429FC1D81B3E6001B3C67 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
-				F8B429FF1D81B3E6001B3C67 /* AppDelegate.swift */,
 				F8B42A041D81B3E6001B3C67 /* ViewController.swift */,
 				F8B42A061D81B3E6001B3C67 /* Main.storyboard */,
-				F8B42A091D81B3E6001B3C67 /* Images.xcassets */,
-				F8B42A0B1D81B3E6001B3C67 /* LaunchScreen.xib */,
-				F8B42A011D81B3E6001B3C67 /* Locations.xcdatamodeld */,
 				F8B429FD1D81B3E6001B3C67 /* Supporting Files */,
+				F8B42A221D81B647001B3C67 /* LocationModel.swift */,
+				F8B42A241D81B650001B3C67 /* HomeModel.swift */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -93,6 +95,10 @@
 		F8B429FD1D81B3E6001B3C67 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F8B429FF1D81B3E6001B3C67 /* AppDelegate.swift */,
+				F8B42A091D81B3E6001B3C67 /* Images.xcassets */,
+				F8B42A0B1D81B3E6001B3C67 /* LaunchScreen.xib */,
+				F8B42A011D81B3E6001B3C67 /* Locations.xcdatamodeld */,
 				F8B429FE1D81B3E6001B3C67 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -215,8 +221,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B42A231D81B647001B3C67 /* LocationModel.swift in Sources */,
 				F8B42A051D81B3E6001B3C67 /* ViewController.swift in Sources */,
 				F8B42A031D81B3E6001B3C67 /* Locations.xcdatamodeld in Sources */,
+				F8B42A251D81B650001B3C67 /* HomeModel.swift in Sources */,
 				F8B42A001D81B3E6001B3C67 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

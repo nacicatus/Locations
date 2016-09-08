@@ -8,18 +8,52 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HomeModelProtocal {
 
+    @IBOutlet weak var listTableView: UITableView!
+    //Properties
+    
+    var feedItems: NSArray = NSArray()
+    var selectedLocation : LocationModel = LocationModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //set delegates and initialize homeModel
+        
+        self.listTableView.delegate = self
+        self.listTableView.dataSource = self
+        
+        let homeModel = HomeModel()
+        homeModel.delegate = self
+        homeModel.downloadItems()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func itemsDownloaded(items: NSArray) {
+        
+        feedItems = items
+        self.listTableView.reloadData()
     }
-
-
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return the number of feed items
+        return feedItems.count
+        
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // Retrieve cell
+        let cellIdentifier: String = "BasicCell"
+        let myCell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)! as! UITableViewCell
+        // Get the location to be shown
+        let item: LocationModel = feedItems[indexPath.row] as! LocationModel
+        // Get references to labels of cell
+        myCell.textLabel!.text = item.name
+        myCell.detailTextLabel!.text = item.address
+        
+        return myCell
+    }
+   
 }
 
