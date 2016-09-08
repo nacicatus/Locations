@@ -29,12 +29,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         homeModel.downloadItems()
         
     }
+  
     
     func itemsDownloaded(items: NSArray) {
         
         feedItems = items
         self.listTableView.reloadData()
     }
+    
+    
+    // MARK:- Table
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of feed items
@@ -55,5 +59,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return myCell
     }
    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedLocation = feedItems[indexPath.row] as! LocationModel
+        self.performSegueWithIdentifier("detailSegue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let detailVC = segue.destinationViewController as! DetailViewController
+        detailVC.selectedLocation = selectedLocation
+    }
+    
+
 }
 
