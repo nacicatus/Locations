@@ -37,7 +37,8 @@ class DetailViewController: UIViewController {
         self.mapView.setRegion(viewRegion, animated: true)
         // Plot pin
         let pin: MKPointAnnotation = MKPointAnnotation()
-        pin.coordinate = poiCoordinates
+        pin.coordinate.latitude = poiCoordinates.latitude
+        pin.coordinate.longitude = poiCoordinates.longitude
         self.mapView.addAnnotation(pin)
         
         //add title to the pin
