@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol HomeModelProtocal: class {
+protocol HomeModelProtocol: class {
     func itemsDownloaded(items: NSArray)
 }
 
@@ -16,7 +16,7 @@ protocol HomeModelProtocal: class {
 class HomeModel: NSObject, NSURLSessionDataDelegate {
     
     //properties
-    weak var delegate: HomeModelProtocal!
+    weak var delegate: HomeModelProtocol!
     var data : NSMutableData = NSMutableData()
     let urlPath: String = "http://einthoven.local/greenlocations.php" //this will be changed to the path where service.php lives
     

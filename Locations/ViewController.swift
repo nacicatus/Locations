@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HomeModelProtocal {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HomeModelProtocol {
 
     @IBOutlet weak var listTableView: UITableView!
     //Properties
